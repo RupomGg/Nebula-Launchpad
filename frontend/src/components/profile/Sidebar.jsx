@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { LayoutGrid, Rocket, Users, Settings, LogOut, Menu, X } from 'lucide-react';
+import { LayoutGrid, Rocket, LogOut, Menu, X } from 'lucide-react';
 import { useDisconnect } from 'wagmi';
 import { useNavigate } from 'react-router-dom';
 
@@ -11,8 +11,6 @@ const Sidebar = ({ activeTab = 'dashboard' }) => {
   const menuItems = [
     { id: 'dashboard', label: 'Dashboard', icon: LayoutGrid, path: '/profile' },
     { id: 'launch', label: 'Launch Token', icon: Rocket, path: '/launch' },
-    { id: 'community', label: 'Community', icon: Users, path: '#' },
-    { id: 'settings', label: 'Settings', icon: Settings, path: '#' },
   ];
 
   return (

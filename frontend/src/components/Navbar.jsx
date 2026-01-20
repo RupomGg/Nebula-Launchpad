@@ -34,10 +34,10 @@ const Navbar = () => {
 
                 {/* Nav Links */}
                 <div className="hidden md:flex items-center gap-8">
-                    {['Explore', 'Launch', 'Docs'].map(item => (
+                    {['Explore', 'Launch'].map(item => (
                         <Link 
                            key={item} 
-                           to={item === 'Launch' ? '/launch' : '#'} 
+                           to={item === 'Launch' ? '/launch' : '/'} 
                            className="text-sm font-medium text-slate-400 hover:text-white transition-colors relative group"
                         >
                             {item}
