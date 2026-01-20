@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+@layer utilities {
+  @keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+  }
+  
+  @keyframes pulse-glow {
+    0%, 100% { 
+      box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+      opacity: 1;
+    }
+    50% { 
+      box-shadow: 0 0 30px rgba(139, 92, 246, 0.5);
+      opacity: 0.9;
+    }
+  }
+}
+
+@theme {
+  --color-obsidian: #0B0E14;
+  --color-glass: rgba(26, 29, 38, 0.6);
+  --color-primary-start: #8B5CF6;
+  --color-primary-end: #6D28D9;
+  --color-neon-green: #10B981;
+  --color-neon-red: #EF4444;
+}
+
+@utility glass-panel {
+  @apply bg-white/5 backdrop-blur-xl border border-white/10 shadow-[inset_0_0_20px_rgba(255,255,255,0.05)] rounded-2xl;
+}
+
+@utility solid-glass-card {
+  @apply bg-[#13161F]/80 backdrop-blur-2xl border border-white/10 shadow-[inset_0_0_20px_rgba(255,255,255,0.05)] rounded-2xl;
+  @apply hover:border-violet-500/30 hover:shadow-[0_5px_20px_rgba(139,92,246,0.2)] hover:-translate-y-1;
+  @apply transition-all duration-300;
+}
+
+@utility heavy-glass-card {
+  @apply bg-[#13161F]/95 backdrop-blur-3xl border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.4)] rounded-3xl;
+  @apply hover:border-violet-500/30 hover:shadow-[0_8px_40px_rgba(139,92,246,0.3)] hover:-translate-y-1;
+  @apply transition-all duration-300;
+}
+
+@utility text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-white to-slate-400;
+}
+
+body {
+  background-color: #020617; /* slate-950 */
+  color: white;
+  background-image: 
+    linear-gradient(to bottom, rgba(2, 6, 23, 0.8), #020617),
+    url('https://images.unsplash.com/photo-1543722530-d2c3201371e7?q=80&w=2674&auto=format&fit=crop');
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  min-height: 100vh;
+}
